@@ -339,16 +339,22 @@ textarea.form-control {
     background: rgba(3, 5, 12, 0.95);
   }
 
-  .hero-section {
-    min-height: 36rem;
-  }
-
   .hero-content h1 {
     font-size: 2.25rem;
   }
 
   .hero-content .lead {
     font-size: 1rem;
+  }
+
+  .hero-slide > .container {
+    align-items: flex-start;
+    padding-top: calc(var(--header-height) + 1.5rem);
+    padding-bottom: 2rem;
+  }
+
+  .hero-section {
+    min-height: 36rem;
   }
 }
 
