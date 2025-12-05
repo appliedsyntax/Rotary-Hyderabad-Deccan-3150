@@ -1,16 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector(".main-header");
-  if (header) {
-    const toggleHeaderBackground = () => {
-      if (window.scrollY > 10) {
-        header.classList.add("scrolled");
-      } else {
-        header.classList.remove("scrolled");
-      }
+
+  // Fix mobile header position
+  if (window.innerWidth <= 767) {
+    let lastScrollTop = 0;
+    const fixHeader = () => {
+      header.style.position = 'fixed';
+      header.style.top = '0';
     };
 
-    toggleHeaderBackground();
-    window.addEventListener("scroll", toggleHeaderBackground, { passive: true });
+    window.addEventListener('scroll', fixHeader, { passive: true });
+    window.addEventListener('resize', fixHeader, { passive: true });
+    fixHeader();
   }
 
   if (window.Swiper) {

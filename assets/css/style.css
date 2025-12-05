@@ -20,18 +20,25 @@ body {
 
 .section-padding {
   padding: 5rem 0;
+  scroll-margin-top: calc(var(--header-height) + 1rem);
 }
 
 .main-header {
-  z-index: 1020;
-  background: linear-gradient(90deg, rgba(5, 5, 5, 0.85), rgba(5, 5, 5, 0.55));
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1050;
+  background: rgba(5, 5, 5, 0.85);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  transition: background 0.3s ease;
+  padding: 1rem 0;
 }
 
-.main-header.scrolled {
-  position: fixed;
-  background: rgba(4, 7, 16, 0.95);
-  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.25);
+.main-header .container {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .logo-tile {
@@ -336,7 +343,20 @@ textarea.form-control {
   }
 
   .main-header {
+    position: fixed;
+    top: 0;
     background: rgba(3, 5, 12, 0.95);
+    padding: 1rem 0;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  .main-header .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
   }
 
   .hero-content h1 {
@@ -355,6 +375,14 @@ textarea.form-control {
 
   .hero-section {
     min-height: 36rem;
+  }
+
+  .brand-logo {
+    height: 48px;
+  }
+
+  .navbar-toggler {
+    margin-right: 0.5rem;
   }
 }
 
